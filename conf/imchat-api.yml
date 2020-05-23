@@ -1,0 +1,14 @@
+localdev:
+  mysql:
+    host: 127.0.0.1:3306
+    database: imchat
+    username: im_api
+    password: ^5P838M%c@QR
+  loglevel: debug
+dev:
+  mysql:
+    host: 127.0.0.1:3306
+    database: imchat
+    username: im_api
+    password: ^5P838M%c@QR
+  loglevel: error

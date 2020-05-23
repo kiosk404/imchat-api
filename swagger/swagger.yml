@@ -1,0 +1,107 @@
+swagger: "2.0"
+info: {}
+basePath: /v1
+paths:
+  /user/upload:
+    post:
+      tags:
+      - user
+      description: Attach Upload
+      operationId: UserController.Attach Upload
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/controllers.UploadJson'
+        "500":
+          description: backend error
+  /user/user/find:
+    get:
+      tags:
+      - user
+      description: get user find result
+      operationId: UserController.Get UserFind
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/controllers.UserFindJson'
+        "500":
+          description: backend error
+  /user/user/info:
+    get:
+      tags:
+      - user
+      description: get user info
+      operationId: UserController.Get UserInfo
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/controllers.UserInfoJson'
+        "500":
+          description: backend error
+  /user/user/login:
+    post:
+      tags:
+      - user
+      description: Determine whether the user is logged in
+      operationId: UserController.UserLogin
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/controllers.UserLoginJson'
+        "500":
+          description: backend error
+  /user/user/register:
+    post:
+      tags:
+      - user
+      description: user register
+      operationId: UserController.Get UserRegister
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/controllers.UserRegisterJson'
+        "500":
+          description: backend error
+definitions:
+  controllers.UploadJson:
+    title: UploadJson
+    type: object
+    properties:
+      Url:
+        type: string
+  controllers.UserFindJson:
+    title: UserFindJson
+    type: object
+    properties:
+      Exist:
+        type: boolean
+      UserInfo:
+        $ref: '#/definitions/controllers.UserInfoJson'
+  controllers.UserInfoJson:
+    title: UserInfoJson
+    type: object
+  controllers.UserLoginJson:
+    title: UserLoginJson
+    type: object
+    properties:
+      Login:
+        type: string
+      Mobile:
+        type: string
+      Name:
+        type: string
+  controllers.UserRegisterJson:
+    title: UserRegisterJson
+    type: object
+    properties:
+      Message:
+        type: string
+      Mobile:
+        type: string
+      User:
+        type: string
